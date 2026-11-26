@@ -1,5 +1,9 @@
 # Voice Island
 
+<p align="center">
+  <img src="docs/images/demo.gif" width="360" alt="The voice island growing out of the camera cutout, then being pulled like jelly">
+</p>
+
 An iOS 27-style voice island for Android. When your assistant opens (Xiao Ai, the Gemini overlay, or
 any app you pick), a liquid-glass bubble grows out of the camera cutout. Light strands inside it react
 to your voice and to the assistant's.
