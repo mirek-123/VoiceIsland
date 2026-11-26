@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Voice Island</string>
+    <string name="a11y_description">Watches for your assistant\'s window (Xiao Ai, Gemini or apps you pick) and draws an iOS 27-style voice island in the camera cutout. It reads only which app owns each window; no screen text is read or stored.</string>
+</resources>

@@ -1,0 +1,55 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "com.mirecek.siriisland"
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.mirecek.siriisland"
+        // AGSL RuntimeShader needs Android 13+; HyperOS 3 is Android 15/16.
+        minSdk 33
+        targetSdk 36
+        versionCode 49
+        versionName "1.48"
+    }
+
+    buildFeatures {
+        aidl true
+    }
+
+    // Personal sideload key, kept out of git, so rebuilt APKs install as updates. Without it (a fresh
+    // clone) builds are signed with the standard debug key.
+    def sideloadKey = file("siri-island.keystore")
+    signingConfigs {
+        sideload {
+            storeFile sideloadKey
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig sideloadKey.exists() ? signingConfigs.sideload : signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            signingConfig sideloadKey.exists() ? signingConfigs.sideload : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation "dev.rikka.shizuku:api:13.1.5"
+    implementation "dev.rikka.shizuku:provider:13.1.5"
+    implementation "org.lsposed.hiddenapibypass:hiddenapibypass:6.1"
+    testImplementation "junit:junit:4.13.2"
+}
