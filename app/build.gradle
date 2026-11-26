@@ -11,8 +11,8 @@ android {
         // AGSL RuntimeShader needs Android 13+; HyperOS 3 is Android 15/16.
         minSdk 33
         targetSdk 36
-        versionCode 49
-        versionName "1.48"
+        versionCode 50
+        versionName "1.49"
     }
 
     buildFeatures {

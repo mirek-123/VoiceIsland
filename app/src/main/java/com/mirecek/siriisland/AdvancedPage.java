@@ -18,6 +18,11 @@ final class AdvancedPage implements SettingsNav.Page {
         detection.setPadding(ui.px(16), ui.px(14), ui.px(16), ui.px(14));
         detection.setLineSpacing(0, 1.2f);
         g.addView(detection);
+
+        LinearLayout widgets = ui.section(col, "Home-screen widgets");
+        ui.add(widgets, ui.switchRow("Idle animation", Prefs.WIDGET_IDLE, false));
+        ui.add(widgets, ui.switchRow("Theme change animation", Prefs.WIDGET_THEME_ANIM, true));
+        ui.footnote(col, "Idle: the strands drift and the glow breathes. Theme change: the old theme pops out and the new one pops in.");
         col.addView(ui.button("Reset to defaults", Ui.DESTRUCTIVE, a::confirmReset), ui.fullWidth(24));
         ui.footnote(col, "Resets every Voice Island setting. Setup (accessibility, Shizuku) is not affected.");
 

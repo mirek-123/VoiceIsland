@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Idle frames: the next frame rises quickly while the last one lingers, so the glass never dims mid-fade. -->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="800"
+    android:fromAlpha="0"
+    android:interpolator="@android:anim/decelerate_interpolator"
+    android:toAlpha="1" />

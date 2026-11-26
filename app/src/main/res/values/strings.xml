@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">Voice Island</string>
     <string name="a11y_description">Watches for your assistant\'s window (Xiao Ai, Gemini or apps you pick) and draws an iOS 27-style voice island in the camera cutout. It reads only which app owns each window; no screen text is read or stored.</string>
+    <string name="widget_theme_label">Voice Island theme</string>
+    <string name="widget_theme_desc">Switch the island\'s colour theme</string>
+    <string name="widget_orb_label">Voice Island orb</string>
+    <string name="widget_orb_desc">A glass orb that opens your assistant</string>
+    <string name="widget_switch_label">Voice Island switch</string>
+    <string name="widget_switch_desc">Turn Voice Island on or off</string>
 </resources>

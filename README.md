@@ -19,6 +19,11 @@ No root needed. Built and tested on a Redmi Note 12 Turbo with HyperOS 3.
 - **Thinking animation:** while the assistant works out an answer, the strands dim and two comets circle the rim.
 - **Assistants:** Xiao Ai, Gemini (its floating panel, not Google Search; tested on MIUI 14 when held on the power button), or any installed app.
 - **Shapes and sound:** iPhone island or iPad/Mac-style orb, and an optional launch sound.
+- **Home-screen widgets:**
+  - **Theme (2×2):** the island in your colours, with arrows that go through the themes.
+  - **Orb (2×2):** a glass orb on your wallpaper that opens your assistant.
+  - **Switch (2×1):** turns the island on or off.
+  - **Animations:** changing the theme pops the new one in. A slow idle animation is available too, off by default. Both have switches under Advanced.
 - **Settings in the iOS 27 style:** liquid toggles, a glass segmented control, and predictive back.
 
 ## Requirements

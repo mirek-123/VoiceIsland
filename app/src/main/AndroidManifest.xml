@@ -18,6 +18,10 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent>
+        <!-- Orb widget fallback: whichever app handles the assist button. -->
+        <intent>
+            <action android:name="android.intent.action.ASSIST" />
+        </intent>
     </queries>
 
     <application
@@ -35,6 +39,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Invisible: the orb widget opens the assistant through it. -->
+        <activity
+            android:name=".AskActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name=".ThemeWidget"
+            android:exported="false"
+            android:label="@string/widget_theme_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_theme_info" />
+        </receiver>
+
+        <receiver
+            android:name=".OrbWidget"
+            android:exported="false"
+            android:label="@string/widget_orb_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_orb_info" />
+        </receiver>
+
+        <receiver
+            android:name=".SwitchWidget"
+            android:exported="false"
+            android:label="@string/widget_switch_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_switch_info" />
+        </receiver>
 
         <service
             android:name=".SiriAccessibilityService"

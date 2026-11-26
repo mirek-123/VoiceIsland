@@ -39,6 +39,9 @@ final class Prefs {
     static final String SOUND_VOLUME = "sound_volume";
     /** Packages whose windows open the island (string set). */
     static final String TRIGGER_APPS = "trigger_apps";
+    /** Home-screen widgets: idle loop (off by default) and the theme-change pop. */
+    static final String WIDGET_IDLE = "widget_idle";
+    static final String WIDGET_THEME_ANIM = "widget_theme_anim";
 
     static final String STYLE_PRISM = "prism";
     static final String STYLE_CLASSIC = "classic";
@@ -77,6 +80,10 @@ final class Prefs {
         else s.remove(pkg);
         get(c).edit().putStringSet(TRIGGER_APPS, s).apply();
     }
+
+    static boolean widgetIdle(Context c) { return get(c).getBoolean(WIDGET_IDLE, false); }
+
+    static boolean widgetThemeAnim(Context c) { return get(c).getBoolean(WIDGET_THEME_ANIM, true); }
 
     /** Island size multiplier, 0.7–1.4. */
     static float scale(Context c) { return get(c).getInt(SIZE_PERCENT, 100) / 100f; }

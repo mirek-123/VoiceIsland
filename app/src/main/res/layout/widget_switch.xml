@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The backdrop cross-fades and the island icon pops when the theme changes (two slots each);
+  the icon's six idle frames cross-fade in a loop.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_pill_bg"
+    android:clipToOutline="true">
+
+    <ViewFlipper
+        android:id="@+id/widget_switch_glow_slots"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inAnimation="@anim/widget_fade_in"
+        android:outAnimation="@anim/widget_fade_out">
+
+        <ImageView android:id="@+id/widget_switch_glow_0" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitXY" />
+        <ImageView android:id="@+id/widget_switch_glow_1" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitXY" />
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="10dp">
+
+        <ViewFlipper
+            android:id="@+id/widget_switch_icon_slots"
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="10dp"
+            android:inAnimation="@anim/widget_theme_in"
+            android:outAnimation="@anim/widget_theme_out">
+
+            <ViewFlipper android:id="@+id/widget_switch_idle0" android:layout_width="match_parent" android:layout_height="match_parent" android:autoStart="true" android:flipInterval="800" android:inAnimation="@anim/widget_idle_in" android:outAnimation="@anim/widget_idle_out">
+                <ImageView android:id="@+id/widget_switch_icon_0_0" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_0_1" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_0_2" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_0_3" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_0_4" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_0_5" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+            </ViewFlipper>
+
+            <ViewFlipper android:id="@+id/widget_switch_idle1" android:layout_width="match_parent" android:layout_height="match_parent" android:autoStart="true" android:flipInterval="800" android:inAnimation="@anim/widget_idle_in" android:outAnimation="@anim/widget_idle_out">
+                <ImageView android:id="@+id/widget_switch_icon_1_0" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_1_1" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_1_2" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_1_3" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_1_4" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+                <ImageView android:id="@+id/widget_switch_icon_1_5" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" android:scaleType="fitCenter" />
+            </ViewFlipper>
+        </ViewFlipper>
+
+        <LinearLayout
+            android:id="@+id/widget_switch_texts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:singleLine="true"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/widget_switch_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="On"
+                android:textColor="#99FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Pushes the toggle to the right when the texts are hidden (narrow widget). -->
+        <FrameLayout
+            android:id="@+id/widget_switch_space"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/widget_switch_toggle"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="6dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_pill_rim" />
+</FrameLayout>

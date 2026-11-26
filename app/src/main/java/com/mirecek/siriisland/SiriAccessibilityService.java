@@ -135,6 +135,7 @@ public final class SiriAccessibilityService extends AccessibilityService
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (Prefs.TRIGGER_APPS.equals(key)) triggers = Prefs.triggerApps(this);
+        if (IslandWidgets.affects(key)) IslandWidgets.updateAll(this, null);
         if (attached) {
             // Only geometry and glass keys restart the backdrop stream; a slider being dragged
             // (look, light, strands) must not stop the live glass on every step.
