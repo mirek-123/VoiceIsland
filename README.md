@@ -1,7 +1,9 @@
 # Voice Island
 
 <p align="center">
-  <img src="docs/images/demo.gif" width="360" alt="The voice island growing out of the camera cutout, then being pulled like jelly">
+  <a href="docs/images/promo.mp4"><img src="docs/images/demo.gif" width="360" alt="The voice island growing out of the camera cutout, then being pulled like jelly"></a>
+  <br>
+  <a href="docs/images/promo.mp4"><b>▶ Watch the 24-second promo (with sound)</b></a>
 </p>
 
 An iOS 27-style voice island for Android. When your assistant opens (Xiao Ai, the Gemini overlay, or
