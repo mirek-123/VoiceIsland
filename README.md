@@ -18,7 +18,7 @@ No root needed. Built and tested on a Redmi Note 12 Turbo with HyperOS 3.
 - **Liquid glass:** the bubble bends and blurs the wallpaper behind it in real time (needs Shizuku), and stretches like jelly when you pull it.
 - **Thinking animation:** while the assistant works out an answer, the strands dim and two comets circle the rim.
 - **Assistants:** Xiao Ai, Gemini (its floating panel, not Google Search; tested on MIUI 14 when held on the power button), or any installed app.
-- **Shapes and sound:** iPhone island or iPad/Mac-style orb, and an optional launch sound.
+- **Shapes and sound:** iPhone island or iPad/Mac-style orb, and an optional launch sound (four synthesised styles, the Siri chime, or your own file).
 - **Home-screen widgets:**
   - **Theme (2×2):** the island in your colours, with arrows that go through the themes.
   - **Orb (2×2):** a glass orb on your wallpaper that opens your assistant.

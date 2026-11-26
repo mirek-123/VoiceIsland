@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Plays a short summon sound when the island opens. The four built-in styles are synthesised here
- * (additive sines with bell-like envelopes); "Custom" plays an audio file the user picked. Played as assistance
- * sonification, so it follows the system's sound settings.
+ * Plays a short summon sound when the island opens. Four built-in styles are synthesised here
+ * (additive sines with bell-like envelopes), "Siri" plays the bundled res/raw/siri.ogg, and "Custom" plays an
+ * audio file the user picked. Played as assistance sonification, so it follows the system's sound settings.
  */
 final class LaunchSound {
     private static final String TAG = "SiriIsland";
@@ -20,8 +20,10 @@ final class LaunchSound {
 
     /** Plays the audio file the user picked (Prefs.CUSTOM_SOUND_URI). */
     static final String CUSTOM = "custom";
-    static final String[] STYLES = {"glass", "chime", "bloom", "pulse", CUSTOM};
-    static final String[] NAMES = {"Glass", "Chime", "Bloom", "Pulse", "Custom"};
+    /** Plays the bundled Siri chime (res/raw/siri.ogg). */
+    static final String SIRI = "siri";
+    static final String[] STYLES = {"glass", "chime", "bloom", "pulse", SIRI, CUSTOM};
+    static final String[] NAMES = {"Glass", "Chime", "Bloom", "Pulse", "Siri", "Custom"};
 
     private static final Map<String, short[]> cache = new HashMap<>();
     private static AudioTrack playing;
@@ -37,6 +39,10 @@ final class LaunchSound {
     static synchronized void play(Context c, String style, int volume) {
         if (CUSTOM.equals(style)) {
             playFile(c, Prefs.customSound(c), volume);
+            return;
+        }
+        if (SIRI.equals(style)) {
+            playFile(c, "android.resource://" + c.getPackageName() + "/" + R.raw.siri, volume);
             return;
         }
         short[] pcm = cache.computeIfAbsent(style, LaunchSound::render);
