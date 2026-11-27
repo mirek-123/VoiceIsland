@@ -69,8 +69,8 @@ Kyant0's AndroidLiquidGlass, the Shizuku API and AndroidHiddenApiBypass (Apache 
 Voice Island is not affiliated with Apple, Xiaomi or Google. Siri and iOS are trademarks of Apple
 Inc.; Xiao Ai is a trademark of Xiaomi; Gemini is a trademark of Google LLC.
 
-## Using the assets
+## Licence
 
-The promo video and GIF, screenshots, icons, widget artwork and launch sounds are all rights
-reserved. If you want to use any of them, ask first by opening an issue titled "Asset permission".
-Details in [ASSETS.md](ASSETS.md).
+The code and the assets (promo, screenshots, icons, widget artwork, launch sounds) are all rights
+reserved. You can read the code and build the app for yourself, but to reuse any of it, ask first by
+opening an issue titled "Permission request". Details in [LICENSE.md](LICENSE.md).
